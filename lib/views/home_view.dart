@@ -1,5 +1,9 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/models/article_model.dart';
+import 'package:news_app/widgets/NewsListViewBuilder.dart';
 import 'package:news_app/widgets/news_tile.dart';
+import '../services/news_service.dart';
 import '../widgets/categories_list_view.dart';
 import '../widgets/news_list_view.dart';
 
@@ -44,7 +48,9 @@ class HomeView extends StatelessWidget {
                   height: 32,
                 ),
               ),
-              NewsListView()
+              NewsListViewBuilder(
+                category: 'general',
+              )
               
               // SliverToBoxAdapter(
               //   child: NewsListView(),
@@ -65,6 +71,11 @@ class HomeView extends StatelessWidget {
     ));
   }
 }
+
+
+
+
+
 
 
 
